@@ -27,6 +27,15 @@ huggingface-cli login
 You can find your Access Token here (https://huggingface.co/settings/tokens):
 ![Huggingface Access Token](./images/huggingface_access_token.png)
 
+### Windows
+Make sure that you have gcc with version >=11 installed on your computer. Here are steps described by [Kevin Anthony Kaw
+](https://github.com/kevinkaw) for a successful setup of gcc:
+- CMake version cmake-3.27.0-windows-x86_64.msi installed to root directory ("C:")
+- minGW64 version 11.0.0 extracted to root directory ("C:")
+- set environment path variables for CMake and minGW64
+- install visual studio build tools. It's way at the bottom under "Tools for Visual Studio" drop down list.
+- In visual studio, check the "Desktop development with c++", click install.
+
 ## Usage
 
 ### Full Precision (Original)
