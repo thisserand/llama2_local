@@ -98,12 +98,14 @@ def run_ui(model, tokenizer, is_chat_model, model_type):
   demo.queue()
   demo.launch(share=True, debug=True)
 
-def main(model_name="", file_name=""):
-    model_name = "TheBloke/Llama-2-7B-Chat-GGML" #"TheBloke/Llama-2-13B-GPTQ"
-    file_name = "llama-2-7b-chat.ggmlv3.q4_K_M.bin"
+def main(model_name=None, file_name=None):
+    assert model_name is not None, "model_name argument is missing."
 
     is_chat_model = 'chat' in model_name.lower()
     model_type = get_model_type(model_name)
+
+    if model_type == Model_Type.ggml:
+      assert file_name is not None, "When model_name is provided for a GGML quantized model, file_name argument must also be provided."
 
     model, tokenizer = init_auto_model_and_tokenizer(model_name, model_type, file_name)
     run_ui(model, tokenizer, is_chat_model, model_type)
