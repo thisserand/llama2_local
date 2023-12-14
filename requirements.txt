@@ -1,6 +1,6 @@
-transformers==4.31.0
-auto-gptq==0.3.0
-langchain==0.0.237
-gradio==3.37.0
-llama-cpp-python==0.1.73
-fire==0.5.0
+transformers==4.36
+bitsandbytes==0.41.3
+accelerate==0.25.0
+scipy==1.11.4
+sentencepiece==0.1.99
+gradio==4.9.0
